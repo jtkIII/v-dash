@@ -69,12 +69,32 @@ const users = [
     blurb: 'Automates deployments and maintains infrastructure.',
     avatar: 'https://i.pravatar.cc/80?img=15',
     online: true
+  },
+  {
+    id: 6,
+    name: 'James Turner',
+    position: 'Fullstack Developer',
+    blurb: 'Bridges frontend and backend with seamless solutions.',
+    avatar: 'https://i.pravatar.cc/80?img=33',
+    online: true  
+  },
+  {
+    id: 7,
+    name: 'Sophie Chen',
+    position: 'UI/UX Designer',
+    blurb: 'Creates intuitive designs that users love.',
+    avatar: 'https://i.pravatar.cc/80?img=22',
+    online: false
   }
 ]
 
+const emit = defineEmits(['select'])
+
 function selectUser(id) {
   selectedUserId.value = id
+  emit('select', id)
 }
+
 </script>
 
 
@@ -111,8 +131,8 @@ function selectUser(id) {
 /* Active / selected state */
 .user-card.active {
   background-color: #202020;
-  border-color: #6365f13c;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.15);
+  border-color: #58508d45;
+  box-shadow: 0 4px 10px rgba(165, 99, 241, 0.15);
 }
 
 /* Avatar wrapper */
@@ -134,7 +154,7 @@ function selectUser(id) {
 
 /* Avatar ring when active */
 .user-card.active .avatar {
-  box-shadow: 0 0 0 2px #6365f1c9;
+  box-shadow: 0 0 0 2px #7b63f1c9;
 }
 
 /* Status dot */
@@ -150,13 +170,13 @@ function selectUser(id) {
 
 /* Online status */
 .status-dot.online {
-  background-color: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.7);
+  background-color: #58508d;
+  box-shadow: 0 0 6px rgba(94, 34, 197, 0.7);
 }
 
 /* Offline status */
 .status-dot.offline {
-  background-color: #9ca3af;
+  background-color: #ff6361;
 }
 
 /* User info */
@@ -179,7 +199,7 @@ function selectUser(id) {
   font-size: 15px;
   font-weight: 600;
   margin: 0;
-  color: #648ce3;
+  color: #003f5c;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -188,16 +208,15 @@ function selectUser(id) {
 /* Position */
 .position {
   font-size: 13px;
-  color: #6b7280;
+  color: #ffa600;
   white-space: nowrap;
 }
 
-/* Blurb */
 .blurb {
   font-size: 13px;
-  color: #4b5563;
+  color: #7b7b7c;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

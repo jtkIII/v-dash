@@ -79,4 +79,4 @@ Install devtools:
 Vue Devtools browser extension
 
 ##### Vite Config
-Alias imports (@) already work via Vite.
+Alias imports (@) already work via vite.config.

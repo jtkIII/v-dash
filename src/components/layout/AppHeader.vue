@@ -1,15 +1,15 @@
 <template>
-    <header>
-        <section id="heading">
-            <h1>vudash</h1>
-            <nav>
-                <ul>
-                    <li><router-link to="/">Home</router-link></li>
-                    <li><router-link to="/about">About</router-link></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
+  <header>
+    <section id="heading">
+      <h1><a href="/">vudash</a></h1>
+      <nav>
+        <ul class="nav-links">
+          <li><router-link to="/">home</router-link></li>
+          <li><router-link to="/about">about</router-link></li>
+        </ul>
+      </nav>
+    </section>
+  </header>
 </template>
 
 <script>

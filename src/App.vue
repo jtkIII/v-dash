@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="app-shell">
     <AppHeader />
     <main id="main">
       <router-view />
     </main>
     <AppFooter />
   </div>
-</template>
+</template> 
 
 <script setup>
 import AppHeader from './components/layout/AppHeader.vue'
