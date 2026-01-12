@@ -107,6 +107,18 @@ const activities = ref([
     user: {
       name: 'Linda',
       avatar: 'https://i.pravatar.cc/32?img=10'
+    },
+  },
+  {
+    id: 6,
+    type: 'file',
+    title: 'Budget report uploaded',
+    meta: 'budget-2024.xlsx',
+    time: 'Last week',
+    unread: true,
+    user: {
+      name: 'Tom',
+      avatar: 'https://i.pravatar.cc/32?img=12'
     }
   }
 ])
