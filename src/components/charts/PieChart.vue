@@ -26,15 +26,15 @@ import { computed } from 'vue'
 const props = defineProps({
   title: {
     type: String,
-    default: 'Ideal framework Usage Breakdown'
+    default: 'Yout Teams Project Status Breakdown'
   },
   data: {
     type: Array,
     default: () => [
-      { label: 'Vue', value: 45, color: '#58508d' },
-      { label: 'React', value: 30, color: '#bc5090' },
-      { label: 'Svelte', value: 15, color: '#ff6361' },
-      { label: 'Other', value: 10, color: '#ffa600' }
+      { label: 'Projects finished on time', value: 45, color: '#58508d' },
+      { label: 'Projects currently on schedule', value: 35, color: '#bc5090' },
+      { label: 'Projects behind schedule', value: 15, color: '#ff6361' },
+      { label: 'Projects that have failed', value: 5, color: '#ffa600' }
     ]
   }
 })

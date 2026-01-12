@@ -1,38 +1,35 @@
 <template>
-  <div>
+  
     <div class="cards-grid">
+      
       <div class="card">
-        <div class="card-heading">
-          <h3>Team Members</h3>
-          <p>Overview of the team and their roles.</p>
-        </div>
+        <CardHeader title="Team Members" subtitle="Overview of the team and their roles." />
         <ListUsers />
       </div>
+
       <div class="card">
-        <div class="card-heading">
-          <h3>Project Stats</h3>
-          <p>Representation of current project metrics.</p>
-        </div>
+        <CardHeader title="Project Stats" subtitle="Key metrics and performance over time." />
         <LineChart title="Tasks Completed Over Time" />
         <PieChart />
+      </div>
 
-      </div>
       <div class="card">
-        <div class="card-heading">
-          <h3>Global Search</h3>
-          <p>Search users, messages, files, and links.</p>
-        </div>
+        <CardHeader title="Global Search and Feed" subtitle="Find users, messages, files, and more." />
         <GlobalSearch @select="handleSelect" />
+
+      
       </div>
+
     </div>
-  </div>
+  
 </template>
 
 <script setup>
-import ListUsers from '../components/charts/ListUsers.vue'
+import ListUsers from '../components/shared/ListUsers.vue'
 import PieChart from '../components/charts/PieChart.vue'
 import LineChart from '../components/charts/LineChart.vue'
 import GlobalSearch from '../components/search/GlobalSearch.vue';
+import CardHeader from '../components/shared/CardHeader.vue';
 function handleSelect({ group, item }) {
   console.log('Selected:', group, item)
   // Later:

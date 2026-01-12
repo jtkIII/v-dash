@@ -15,8 +15,12 @@
 
           <ul class="items">
             <li v-for="(item, index) in group" :key="item.id || index" class="item" @click="select(groupKey, item)">
-              <span class="item-title">{{ item.title }}</span>
-              <span v-if="item.meta" class="item-meta">{{ item.meta }}</span>
+              <component :is="icons[groupKey]" class="icon" />
+
+              <div class="content">
+                <span class="item-title">{{ item.title }}</span>
+                <span v-if="item.meta" class="item-meta">{{ item.meta }}</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -29,7 +33,19 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import {
+  User,
+  MessageSquare,
+  FileText,
+  Link2
+} from 'lucide-vue-next'
 
+const icons = {
+  Users: User,
+  Messages: MessageSquare,
+  Files: FileText,
+  Links: Link2
+}
 const props = defineProps({
   results: {
     type: Object,
@@ -95,8 +111,9 @@ function select(group, item) {
 
 .item {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row; /* <-- key change */
+  align-items: flex-start;
+  gap: 10px;
   padding: 8px 12px;
   cursor: pointer;
   transition: background-color 0.15s ease;
@@ -115,4 +132,24 @@ function select(group, item) {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
 }
+
+
+.icon {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+}
+
+.item:hover .icon {
+  color: #6366f1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 </style>
