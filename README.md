@@ -57,17 +57,19 @@ src/
 
 ##### Simple Global State (No Pinia)
 - src/store/state.js
-- import { reactive } from 'vue'
+
+```import { reactive } from 'vue'
 
 - export const state = reactive({
   user: null,
   isLoggedIn: false
 })
+```
 
-Usage in components:
-import { state } from '@/store/state'
+- Usage in components:
+```import { state } from '@/store/state'
 
-state.isLoggedIn = true
+state.isLoggedIn = true```
 
 
 ##### Optional Nice-to-Haves
