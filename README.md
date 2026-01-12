@@ -15,8 +15,6 @@
 
 #### For completeness:
 
-1. Install Node.js
-
 Make sure Node.js (LTS) is installed.
 
 Check:
