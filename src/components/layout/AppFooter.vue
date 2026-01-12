@@ -1,5 +1,5 @@
 <template>
   <footer>
-    <p>© 2026</p>
+    <p class="coda">© 2026 JTk</p>
   </footer>
 </template>

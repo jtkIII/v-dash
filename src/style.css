@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 1rem;
+  padding: .33rem 1rem;
 }
 
 img,
@@ -69,7 +69,7 @@ h6 {
 }
 
 h1 {
-  font-size: 2.3em;
+  font-size: 2em;
   line-height: 1.1;
 }
 
@@ -98,7 +98,6 @@ a:hover {
   color: #535bf2;
 }
 
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -120,16 +119,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-header {
+header, footer {
   background-color: #161616;
-  color: white;
+  color: rgba(255, 255, 255, 0.633);
 }
 
 #heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 header ul {
@@ -150,9 +149,11 @@ footer {
   bottom: 0rem;
   width: 100%;
   text-align: center;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.6);
-  background-color: #0a194c;
+  font-size: 0.66rem;
+}
+
+.coda {
+  padding: .33rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

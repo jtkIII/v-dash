@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h2>Home</h2>
     <div class="cards-grid">
       <div class="card">
-        <h3>Team Members</h3>
+        <div class="card-heading">
+          <h3>Team Members</h3>
         <p>A quick overview of your team and their roles.</p>
+        </div>
         <ListUsers />
       </div>
       <div class="card">
@@ -35,5 +36,14 @@
     padding: .5rem;
     border-radius: 8px;
     background: #262626;
+  }
+  .card h3 {
+    margin-bottom: 0.1rem;
+    font-size: small;
+    color: #ffffff92;
+  }
+  .card p {
+    font-size: 0.75rem;
+    color: #b3b3b3;
   }
 </style>

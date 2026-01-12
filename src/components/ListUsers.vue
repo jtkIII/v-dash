@@ -1,23 +1,11 @@
 <template>
   <div class="user-list">
-    <div
-      v-for="user in users"
-      :key="user.id"
-      class="user-card"
-      :class="{ active: user.id === selectedUserId }"
-      @click="selectUser(user.id)"
-    >
+    <div v-for="user in users" :key="user.id" class="user-card" :class="{ active: user.id === selectedUserId }"
+      @click="selectUser(user.id)">
       <div class="avatar-wrapper">
-        <img
-          class="avatar"
-          :src="user.avatar"
-          :alt="user.name"
-        />
+        <img class="avatar" :src="user.avatar" :alt="user.name" />
 
-        <span
-          class="status-dot"
-          :class="{ online: user.online, offline: !user.online }"
-        />
+        <span class="status-dot" :class="{ online: user.online, offline: !user.online }" />
       </div>
 
       <div class="user-info">
@@ -60,10 +48,26 @@ const users = [
   },
   {
     id: 3,
-    name: 'Sam Patel',
+    name: 'Linda Linda',
     position: 'Backend Developer',
     blurb: 'API specialist with a passion for scalable systems.',
     avatar: 'https://i.pravatar.cc/80?img=45',
+    online: true
+  },
+  {
+    id: 4,
+    name: 'Sam Shades',
+    position: 'QA Engineer',
+    blurb: 'Ensures top-notch quality through rigorous testing.',
+    avatar: 'https://i.pravatar.cc/80?img=68',
+    online: false
+  },
+  {
+    id: 5,
+    name: 'David Kendall',
+    position: 'DevOps Engineer',
+    blurb: 'Automates deployments and maintains infrastructure.',
+    avatar: 'https://i.pravatar.cc/80?img=15',
     online: true
   }
 ]
@@ -77,6 +81,7 @@ function selectUser(id) {
 
 <style>
 .user-list {
+  margin-top: .5rem;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -89,8 +94,8 @@ function selectUser(id) {
   gap: 14px;
   padding: 12px 16px;
   border-radius: 12px;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  background-color: #232323;
+  border: 1px solid #8f8f8f13;
   cursor: pointer;
   transition:
     background-color 0.2s ease,
@@ -100,13 +105,13 @@ function selectUser(id) {
 
 /* Hover (non-active) */
 .user-card:hover:not(.active) {
-  background-color: #f9fafb;
+  background-color: #161616;
 }
 
 /* Active / selected state */
 .user-card.active {
-  background-color: #eef2ff;
-  border-color: #6366f1;
+  background-color: #202020;
+  border-color: #6365f13c;
   box-shadow: 0 4px 10px rgba(99, 102, 241, 0.15);
 }
 
@@ -129,7 +134,7 @@ function selectUser(id) {
 
 /* Avatar ring when active */
 .user-card.active .avatar {
-  box-shadow: 0 0 0 2px #6366f1;
+  box-shadow: 0 0 0 2px #6365f1c9;
 }
 
 /* Status dot */
@@ -174,7 +179,7 @@ function selectUser(id) {
   font-size: 15px;
   font-weight: 600;
   margin: 0;
-  color: #111827;
+  color: #648ce3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -199,6 +204,4 @@ function selectUser(id) {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
-
 </style>

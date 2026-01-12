@@ -1,7 +1,7 @@
 <template>
     <header>
         <section id="heading">
-            <h1>VuDash</h1>
+            <h1>vudash</h1>
             <nav>
                 <ul>
                     <li><router-link to="/">Home</router-link></li>
