@@ -6,6 +6,8 @@
         <ul class="nav-links">
           <li><router-link to="/">home</router-link></li>
           <li><router-link to="/about">about</router-link></li>
+          <li><router-link to="/even-more">more</router-link></li>
+          <li><router-link to="/settings">settings</router-link></li>
         </ul>
       </nav>
     </section>

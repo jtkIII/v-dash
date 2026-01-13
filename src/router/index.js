@@ -6,7 +6,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'home', component: HomeView },
-    { path: '/about', name: 'about', component: AboutView }
+    { path: '/about', name: 'about', component: AboutView },
+    { path: '/even-more', name: 'even-more', component: () => import('../views/EvenMore.vue') },
+    { path: '/settings', name: 'settings', component: () => import('../views/SettingsView.vue') }
   ]
 })
 

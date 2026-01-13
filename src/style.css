@@ -184,7 +184,7 @@ header h1 a {
 .nav-links li a {
   text-transform: lowercase;
   font-weight: 500;
-  font-size: small;
+  font-size: .66rem;
 }
 
 footer {
