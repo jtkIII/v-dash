@@ -7,12 +7,9 @@
         <Heart class="inline-icon" /> <span> &nbsp; JTk Coded This in 2026</span>
       </div>
       <div class="footer-right">
-        <a href="https://github.com/jtk/vudash">
-          <GitBranch class="inline-icon" />
-           <HatGlasses class="inline-icon" />
-           <Coffee class="inline-icon" />
-        </a>
-       
+        <a href="https://github.com/jtkIII/v-dash"><GitBranch class="inline-icon" /></a>
+        <a href="https://buymeacoffee.com/jtkiii"><Coffee class="inline-icon" /></a>
+        <a href="https://jtk3.com"><HatGlasses class="inline-icon" /></a>
       </div>
     </div>
   </footer>
@@ -51,8 +48,10 @@ footer {
     text-align: center;
   }
 
-  .footer-right a {
+  .footer-right {
     display: flex;
+    margin-right: 12px;
+    gap: 12px;
   }
 
   .inline-icon {

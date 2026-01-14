@@ -1,4 +1,4 @@
-# vudash
+# v-dash
 ## Vue3 Dashboard
 
 ### I'm going for “UI-complete for mock stage”.
@@ -32,7 +32,7 @@ https://nodejs.org/
 
 Then:
 ```bash
-cd vudash
+cd v-dash
 npm install
 npm run dev
 ```
