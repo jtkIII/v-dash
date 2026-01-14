@@ -8,7 +8,7 @@
 
     <h3>Headings & Text</h3>
     <p>Use <strong>strong</strong>, <em>emphasis</em>, and <code>inline code</code> to highlight text. Here's an example
-      link to the <a href="#">home page</a>.</p>
+      link to the <a href="/">home page</a>.</p>
 
     <ContentSep />
 
@@ -55,9 +55,14 @@
           <td>Simple global state in `store/state.js`</td>
         </tr>
         <tr>
-          <td>Styling</td>
-          <td>Planned</td>
-          <td><a href="#">Utility and component styles</a></td>
+          <td>Custom Styling</td>
+          <td>Implemented</td>
+          <td><a @click="utilityClick" class="click-me">Utility and component custom styles</a></td>
+        </tr>
+        <tr>
+          <td><a @click="onClick" class="click-me">Modal System</a></td>
+          <td>Implement</td>
+          <td>A global custom modal layer</td>
         </tr>
       </tbody>
     </table>
@@ -133,23 +138,80 @@
     <ContentSep />
 
     <div class="about-img">
-        <img src="/jtk.webp" id="jtk" alt="Coded by Jtk" />
+        <a @click="jtkClick" class="click-me"><img src="/jtk.webp" id="jtk" alt="Coded by Jtk" /></a>
     </div>
 
   </main>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { watch, reactive } from 'vue'
 import ContentSep from '../components/shared/ContentSep.vue'
+import { confirm, notice } from '@/composables/useModal'
+
+const props = defineProps({
+  modelValue: Boolean,
+  autoCommit: { type: Boolean, default: true }
+})
+
+const emit = defineEmits(['update:modelValue', 'commit'])
+
+watch(
+  () => props.modelValue,
+  () => {
+    if (props.autoCommit) {
+      emit('commit')
+    }
+  }
+)
+
 const form = reactive({
   name: '',
   role: 'Lead Developer',
   subscribe: false
 })
 
-const onSubmit = () => {
-  alert(`Submitted: ${form.name} (${form.role}) - subscribed: ${form.subscribe}`)
+const onSubmit = async () => {
+  return await confirm({
+    title: form.name
+      ? `Thanks, ${form.name}!`
+      : 'Thanks for submitting!',
+    message: form.subscribe
+      ? 'You have been subscribed to updates.'
+      : 'You have not been subscribed to updates.',
+    confirmText: 'Achtung!',
+    cancelText: 'Back 2 Safety',
+    variant: 'danger'
+  })
+}
+
+const jtkClick = async () => {
+  return await notice({
+    title: 'jtkIII',
+    message: 'Dashboard coded by Jtk using Vue 3 and Vite.',
+    confirmText: 'Ok Then',
+    variant: 'purple'
+  })
+}
+
+const utilityClick = async () => {
+  return await confirm({
+    title: 'Custom CSS Styles',
+    message: 'No external CSS frameworks here! All styles are custom built for VuDash.',
+    confirmText: 'Cool',
+    cancelText: 'okay',
+    variant: 'standard'
+  })
+}
+
+const onClick = async () => {
+  return await confirm({
+    title: 'Modal Madness!',
+    message: 'Why add an external package when you can build your own modal system?',
+    confirmText: 'Diggit',
+    cancelText: 'Nope',
+    variant: 'cool'
+  })
 }
 
 const reset = () => {
@@ -161,6 +223,13 @@ const reset = () => {
 
 
 <style scoped>
+
+.click-me {
+  cursor: pointer;
+  /* color: #6365f1; */
+  /* text-decoration: underline; */
+}
+
   .about-img {
     width: fit-content;
     text-align: center;

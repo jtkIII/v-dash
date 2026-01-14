@@ -3,6 +3,7 @@
     <AppHeader />
     <main id="main">
       <router-view />
+      <ModalHost />
     </main>
     <AppFooter />
   </div>
@@ -11,4 +12,5 @@
 <script setup>
 import AppHeader from './components/layout/AppHeader.vue'
 import AppFooter from './components/layout/AppFooter.vue'
+import ModalHost from '@/components/modals/ModalHost.vue'
 </script>

@@ -8,9 +8,13 @@
 ✅ Vue Router
 ✅ Simple state (using reactive store — lighter than Pinia/Vuex)
 ✅ src/store for simple state
-✅ Clean directory structure
-✅ Components folder
-✅ src/views for pages
+
+- custom modal system
+- composable-based
+- slot-driven
+- visually flexible
+- backend-agnostic
+- zero-lock-in
 
 
 #### For completeness:

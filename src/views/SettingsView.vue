@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { watch, ref } from 'vue'
 import { onBeforeRouteLeave } from 'vue-router'
 import SettingsRow from '@/components/settings/SettingsRow.vue'
 import SettingToggle from '@/components/settings/SettingToggle.vue'
@@ -8,8 +8,24 @@ import SettingsSelect from '@/components/settings/SettingsSelect.vue'
 import SettingInput from '@/components/settings/SettingInput.vue'
 import SettingAction from '@/components/settings/SettingAction.vue'
 import SettingsFooter from '@/components/settings/SettingsFooter.vue'
+import { confirm } from '@/composables/useModal'
 import { useDirtyState } from '@/composables/useDirtyState'
 
+const props = defineProps({
+  modelValue: Boolean,
+  autoCommit: { type: Boolean, default: true }
+})
+
+const emit = defineEmits(['update:modelValue', 'commit'])
+
+watch(
+  () => props.modelValue,
+  () => {
+    if (props.autoCommit) {
+      emit('commit')
+    }
+  }
+)
 
 const settings = ref({
   notifications: true,
@@ -17,26 +33,23 @@ const settings = ref({
   username: 'Jtk',
 })
 
-const {
-  dirty,
-  commit,
-  reset
-} = useDirtyState(settings)
+const { dirty, commit, reset } = useDirtyState(settings)
 
-onBeforeRouteLeave(() => {
-  if (!dirty.value) return true
-
-  return window.confirm(
-    'You have unsaved changes. Leave without saving?'
-  )
+// onBeforeRouteLeave(async () => {
+onBeforeRouteLeave(async () => {
+  if (dirty.value) {
+  return await confirm({
+    title: 'Unsaved changes',
+    message: 'You have unsaved changes. Leave without saving?',
+    confirmText: 'Leave',
+    cancelText: 'Stay',
+    variant: 'danger'
+  })
+}
 })
 
 
 const original = JSON.stringify(settings.value)
-
-// const dirty = computed(() =>
-//   JSON.stringify(settings.value) !== original
-// )
 
 function save() {
   Object.assign(settings.value, JSON.parse(JSON.stringify(settings.value)))
@@ -60,8 +73,14 @@ const resetSettings = () => {
   crypto.value = 'bitcoin'
 }
 
-const clearCache = () => {
-  alert('Cache cleared!')
+const clearCache = async () =>{
+    return await confirm({
+    title: 'Unsaved changes',
+    message: 'You have unsaved changes. Leave without saving?',
+    confirmText: 'Leave',
+    cancelText: 'Stay',
+    variant: 'danger'
+  })
 }
 
 </script>
@@ -74,11 +93,11 @@ const clearCache = () => {
     </SettingsRow>
 
     <SettingsRow label="Enable notifications" description="Allow system notifications">
-      <SettingToggle v-model="notificationsEnabled" />
+      <SettingToggle v-model="notificationsEnabled" @commit="commit" />
     </SettingsRow>
 
     <SettingsRow label="Email updates" description="Receive weekly summaries">
-      <SettingToggle v-model="emailUpdates" />
+      <SettingToggle v-model="emailUpdates" @commit="commit" />
     </SettingsRow>
 
     <SettingsRow label="Theme" description="Choose your preferred appearance">
