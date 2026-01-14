@@ -55,8 +55,3 @@ test('renders props and defaults', () => {
   expect(wrapper.get('p').text()).toBe('World')
 })
 ```
-
-### Notes
-
-- Consider adding a Storybook story to demonstrate variations (default, long text, dynamic data).
-- If you want the component to support different heading levels, we can add a `level` prop (1-6) and render the appropriate heading tag.

@@ -17,6 +17,9 @@
 - zero-lock-in
 
 
+---
+
+
 #### For completeness:
 
 Make sure Node.js (LTS) is installed.
@@ -27,8 +30,7 @@ node -v
 npm -v
 ```
 
-If not installed, get it from:
-https://nodejs.org/
+If not installed, get it from: https://nodejs.org/
 
 Then:
 ```bash
@@ -39,6 +41,7 @@ npm run dev
 
 Open the URL shown in the terminal to confirm it works.
 
+---
 
 ##### Project Structure
 
@@ -81,29 +84,9 @@ src/
 - router/ – Vue Router configuration
 - assets/ – Static assets and media
 
+**There is additional documentation in the /docs directory.**
 
-##### Simple Global State (No Pinia)
-- src/store/state.js
-
-```
-import { reactive } from 'vue'
-
-- export const state = reactive({
-  user: null,
-  isLoggedIn: false
-})
-```
-
-- Usage in components:
-
-```
-import { state } from '@/store/state'
-state.isLoggedIn = true
-```
-
-##### Optional Nice-to-Haves
-Install devtools:
-Vue Devtools browser extension
+---
 
 ##### Vite Config
 Alias imports (@) already work via vite.config.
