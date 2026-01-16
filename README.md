@@ -6,8 +6,8 @@
 ✅ Node.js + npm
 ✅ Vue 3 via Vite
 ✅ Vue Router
+✅ Minimal Dependencies
 ✅ Simple state (using reactive store — lighter than Pinia/Vuex)
-✅ src/store for simple state
 
 - custom modal system
 - composable-based
@@ -16,9 +16,7 @@
 - backend-agnostic
 - zero-lock-in
 
-
 ---
-
 
 #### For completeness:
 
@@ -88,5 +86,5 @@ src/
 
 ---
 
-##### Vite Config
-Alias imports (@) already work via vite.config.
+- Alias imports (@) already work via vite.config.
+- lucide-vue-next, Vue, and vue-router are the only dependencies

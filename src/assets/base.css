@@ -330,7 +330,6 @@ h3.chart-title {
 .content-prose {
   max-width: 80ch;
   margin: 1.5rem auto;
-  color: rgba(255, 255, 255, 0.92);
 }
 
 .content-prose p,
@@ -346,7 +345,6 @@ figcaption {
 .content-prose h1,
 .content-prose h2,
 .content-prose h3 {
-  color: #fff;
   margin-top: 1.25rem;
   margin-bottom: .5rem;
 }

@@ -2,6 +2,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-left">
+        <ThemeToggle />
       </div>
       <div class="footer-center">
         <Heart class="inline-icon" /> <span> &nbsp; JTk Coded This in 2026</span>
@@ -17,8 +18,10 @@
 
 <script setup>
   import {
-  HatGlasses,  Coffee, GitBranch, Heart
-} from 'lucide-vue-next'
+    HatGlasses,  Coffee, GitBranch, Heart
+  } from 'lucide-vue-next'
+
+  import ThemeToggle from '../shared/ThemeToggle.vue';
 </script>
 
 <style scoped>
@@ -42,7 +45,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 0;
+    padding: 10px 0;
     background-color: #171717;
     color: #cfcfcf;
     font-size: 14px;
@@ -53,6 +56,10 @@ footer {
     display: flex;
     margin-right: 12px;
     gap: 12px;
+  }
+
+  .footer-left {
+    margin-left: 10px;
   }
 
   .inline-icon {
