@@ -121,25 +121,22 @@ function select(group, item) {
 }
 
 .item-title {
-  font-size: 13px;
+  font-size: var(--txt-sm);
     color: var(--text-primary);
 }
 
 .item-meta {
-  font-size: 12px;
+  font-size: var(--txt-sm);
   color: var(--text-heading);
 }
 
 .icon {
-  margin-top: 2px;
-  width: 16px;
-  height: 16px;
   color: var(--purple);
   flex-shrink: 0;
 }
 
 .item:hover .icon {
-  color: #6366f1;
+  color: var(--pink);
 }
 
 .content {

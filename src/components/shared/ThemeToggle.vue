@@ -21,9 +21,4 @@ const { theme, toggle } = useTheme()
   align-items: center;
   gap: 4px;
 }
-
-.icon {
-  width: 16px;
-  height: 16px;
-}
 </style>

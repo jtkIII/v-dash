@@ -337,6 +337,11 @@ figcaption {
   margin-bottom: var(--space-md);
 }
 
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
 @media (max-width: 560px) {
   .content-prose {
     padding: var(--space-lg);

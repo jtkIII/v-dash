@@ -205,8 +205,6 @@ function select(activity) {
 
 /* Icon */
 .icon {
-  width: 16px;
-  height: 16px;
   color: var(--mid);
 }
 
