@@ -55,8 +55,10 @@ import ContentSep from '../shared/ContentSep.vue';
 import CardHeader from '../shared/CardHeader.vue';
 import { usePosts } from '@/composables/usePosts'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 const emit = defineEmits(['select'])
 const selectedPostId = ref(0)
+const router = useRouter()
 const {
   posts,
   unreadPosts,
@@ -71,9 +73,9 @@ const {
 function selectPost(id) {
   selectedPostId.value = id
   console.log("Post id:" + id)
-  emit('select', id)
+  router.push('/blog/sample')
+  // router.push('/blog/${id}')
 }
-
 </script>
 
 <style scoped>
