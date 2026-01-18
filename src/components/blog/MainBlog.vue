@@ -1,7 +1,8 @@
 <template>
   <section class="main-blog-heading">
     <div class="blog-header">
-      <CardHeader title="Main Blog Section" :subtitle="`${unreadPosts.length} posts unread - out of ${posts.length} posts total`" />
+      <CardHeader title="The Latest Posts"
+        :subtitle="`${unreadPosts.length} posts unread - out of ${posts.length} posts total`" />
       <button class="toggle-unread" @click="showUnreadOnly = !showUnreadOnly">
         {{ showUnreadOnly ? 'Show all posts' : 'Show unread only' }}
       </button>
@@ -13,7 +14,7 @@
     <div class="posts-grid">
 
       <article v-for="post in visiblePosts" :key="post.id" class="post-card">
-        
+
         <div class="img-container">
           <img @click="selectPost(post.id)" class="post-img" :src="post.avatar" :alt="post.name" />
         </div>
@@ -22,7 +23,9 @@
           <div class="post-meta">
             <div class="post-header">
               <h4 class="name">
-                <a @click="selectPost(post.id)"> {{ post.name }}</a>
+                <button class="post-title" @click="selectPost(post.id)">
+                  {{ post.name }}
+                </button>
               </h4>
               <hr />
               <span class="author">{{ post.author }}</span>
@@ -31,6 +34,7 @@
             <button @click="toggleLike(post.id)" class="like-button">
               {{ post.likes.likedByMe ? '❤️' : '🤍' }} {{ post.likes.count }}
             </button>
+
           </div>
           <p class="blurb"> {{ post.blurb }} </p>
         </div>
@@ -73,6 +77,22 @@ function selectPost(id) {
 </script>
 
 <style scoped>
+button.post-title {
+  background: none;
+  box-shadow: none;
+  margin-left: none;
+  padding-left: 0;
+  font-size: var(--txt-lg);
+  color: var(--pink);
+}
+
+button.post-title:hover {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--orange);
+}
+
 .main-blog {
   padding: var(--space-md);
   margin-bottom: var(--space-fl);
@@ -86,8 +106,13 @@ function selectPost(id) {
   height: 256px;
   width: 256px;
   cursor: pointer;
+  border: var(--border-transparent);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-md)
+}
+
+.post-img:hover {
+  border: 1px solid var(--text-sub);
 }
 
 .posts-grid {
@@ -116,7 +141,7 @@ function selectPost(id) {
 }
 
 .name {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 ul.tags {
@@ -130,7 +155,8 @@ ul.tags {
   color: var(--text-muted);
 }
 
-.post-meta, .blog-header {
+.post-meta,
+.blog-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -139,5 +165,9 @@ ul.tags {
 
 button.like-button {
   font-size: var(--txt-sm);
+}
+
+.blurb {
+  margin-bottom: var(--space-md);
 }
 </style>
