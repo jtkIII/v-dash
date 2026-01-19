@@ -75,7 +75,8 @@ const onSubmit = async () => {
   border-top: 1px solid var(--border-subtle);
   backdrop-filter: blur(6px);
   transform: translateY(100%);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .settings-footer.visible {
@@ -92,4 +93,13 @@ const onSubmit = async () => {
   gap: 8px;
 }
 
+@media (max-width: 640px) {
+.settings-footer {
+  margin-bottom: 4rem;
+}
+
+}
+
 </style>
+
+

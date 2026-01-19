@@ -168,4 +168,14 @@ button.like-button {
 .blurb {
   margin-bottom: var(--space-md);
 }
+
+/* ---------- Mobile stacking ---------- */
+@media (max-width: 640px) {
+
+  .post-card, .post-img  {
+  width: 100%;
+}
+
+}
+
 </style>

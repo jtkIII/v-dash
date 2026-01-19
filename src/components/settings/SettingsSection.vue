@@ -41,7 +41,7 @@ defineProps({
 }
 
 .title {
-  font-size: 15px;
+  font-size: var(--txt-lg);
   font-weight: 600;
   color: var(--text-heading);
   margin: 5px 0 0 5px;
@@ -49,14 +49,14 @@ defineProps({
 
 .description {
   margin: 2px 0 10px 5px;
-  font-size: 13px;
+  font-size: var(--txt-md);
   color: var(--text-muted);
 }
 
 .rows {
-  margin-top: 8px;
+  margin-top: var(--space-lg);
   background-color: var(--bg-list);
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: 0;
   border: 1px solid var(--border-subtle);
 }
