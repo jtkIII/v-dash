@@ -19,7 +19,7 @@
 
     <h3>Settings and Slots</h3>
     <p>Check out <strong>the /components/settings dir</strong> and SettingsView to see the slick settings components.
-      Idiomatic Vue patterns are used throughout the app.</p>
+      Idiomatic Vue patterns are used throughout the app. There is also a <a href="/blog/main">blog section</a> that highlights some styling ideas.</p>
 
     <ContentSep />
 
@@ -186,7 +186,7 @@ const onSubmit = async () => {
   return await notice({
     title: form.name
       ? `Thanks, ${form.name}!`
-      : 'Thanks for submitting!',
+      : 'No Name?',
     message: form.subscribe
       ? 'You have been subscribed to updates.'
       : 'You have not been subscribed to updates.',
@@ -234,11 +234,6 @@ const reset = () => {
 
 
 <style scoped>
-.click-me {
-  cursor: pointer;
-  /* color: #6365f1; */
-  /* text-decoration: underline; */
-}
 
 .about-img {
   width: fit-content;

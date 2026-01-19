@@ -4,7 +4,7 @@
 
   --backdrop:  rgba(255, 255, 255, 0.55);
   --bg-list: #efecf285;
-  --bg-surface: #58508d12;
+  --bg-surface: #e2e1ecef;
   --bg-surface-active: #e4e4e45b;
   --bg-light: rgba(0, 0, 0, 0.03);
   --bg-input: #e8e8ee;
@@ -13,7 +13,7 @@
 
   /* text */
   --text-primary: rgba(0, 0, 0, 0.87);
-  --text-muted: rgba(169, 155, 155, 0.694);
+  --text-muted: rgba(106, 111, 116, 0.694);
   --text-secondary: rgba(34, 34, 92, 0.801);
   --text-heading: #47474790;
   

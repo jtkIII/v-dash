@@ -1,4 +1,5 @@
-# GlobalSearch Architecture 
+# Typeahead Search
+Start typing in the search box and you will begin to get results sorted by category.
 
 ```
 GlobalSearch.vue
@@ -30,9 +31,10 @@ GlobalSearch.vue
   Files:    [{ id, title, meta }],
   Links:    [{ id, title, meta }]
 }
+```
 
-// for example:
-
+**For example:**
+```
 apiResponse.groups.forEach(group => {
   results[group.name] = group.items.map(mapToUIShape)
 })
@@ -46,6 +48,4 @@ SearchInput
             → GlobalSearch
               → emit('select')
                 → Page
-
-
 ```

@@ -38,7 +38,6 @@ footer {
   right: 0;
   bottom: 0;
   height: var(--footer-height);
-  text-align: center;
   font-size: 0.66rem;
   margin: 0;
   z-index: 1000;

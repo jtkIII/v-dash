@@ -59,19 +59,13 @@ function selectUser(id) {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
 }
 
-/* Hover (non-active) */
 .user-card:hover:not(.active) {
   background-color: var(--bg-surface-active);
   border: 1px solid var(--border-subtle);
 }
 
-/* Active / selected state */
 .user-card.active {
   background-color: var(--bg-surface-active);
   border-color: var(--border-subtle);
@@ -85,7 +79,6 @@ function selectUser(id) {
   flex-shrink: 0;
 }
 
-/* Avatar */
 .avatar {
   width: 100%;
   height: 100%;
@@ -94,12 +87,10 @@ function selectUser(id) {
   transition: box-shadow 0.2s ease;
 }
 
-/* Avatar ring when active */
 .user-card.active .avatar {
   box-shadow: 0 0 0 2px var(--purple)
 }
 
-/* Status dot */
 .status-dot {
   position: absolute;
   bottom: -1px;
@@ -110,18 +101,15 @@ function selectUser(id) {
   border: 2px solid white;
 }
 
-/* Online status */
 .status-dot.online {
   background-color: var(--purple);
   box-shadow: 0 0 6px rgba(94, 34, 197, 0.7);
 }
 
-/* Offline status */
 .status-dot.offline {
   background-color: var(--red);
 }
 
-/* User info */
 .user-info {
   display: flex;
   flex-direction: column;
@@ -129,14 +117,12 @@ function selectUser(id) {
   min-width: 0;
 }
 
-/* Name + position row */
 .user-header {
   display: flex;
   align-items: baseline;
   gap: 8px;
 }
 
-/* Name */
 h3.name {
   font-size: 15px;
   font-weight: 600;
@@ -146,7 +132,6 @@ h3.name {
   text-overflow: ellipsis;
 }
 
-/* Position */
 .position {
   font-size: 13px;
   color: var(--yellow);

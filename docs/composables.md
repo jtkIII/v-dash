@@ -11,7 +11,9 @@ Still, I think that I have the hang of them but if you see anything that can be 
 
 #### useModal
 
-useModal.js is prolly the best example here of how you are supposed to use composables, useUsers is more of how I have always done things.
+- useModal.js is prolly the best example (here)[https://github.com/jtkIII/v-dash/blob/main/src/composables/useModal.js] of how you are supposed to use composables
+- useUsers is more of how I have always done things. 
+- useDirtyState.js is the most half-baked part of this dashboard.
 
 ##### Todos
 

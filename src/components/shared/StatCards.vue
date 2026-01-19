@@ -165,10 +165,11 @@ onBeforeUnmount(() => {
   margin-top: 8px;
   font-size: 13px;
   color: var(--text-primary);
+    text-transform: uppercase;
 }
 
 .description {
-  margin-top: 4px;
+  margin-top: 0px;
   font-size: 12px;
   color: var(--text-heading);
 }
@@ -177,7 +178,6 @@ onBeforeUnmount(() => {
   font-variant-numeric: tabular-nums;
   transition: color 0.2s ease;
 }
-
 
 /* Mobile */
 @media (max-width: 640px) {

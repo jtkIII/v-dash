@@ -115,36 +115,6 @@ watch(
   overflow: hidden;
 }
 
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th {
-  font-size: 11px;
-  text-transform: uppercase;
-  color: var(--mid);
-  padding: 10px 12px;
-  text-align: left;
-}
-
-td {
-  padding: 10px 12px;
-  font-size: 14px;
-}
-
-/* Rows */
-tbody tr {
-  transition: background-color 0.15s ease;
-  border: 1px solid transparent;
-}
-
-tbody tr:hover {
-  background-color: var(--bg-surface-active);
-  border: 1px solid var(--border-subtle);
-}
-
 tbody tr.dragging {
   opacity: 0.5;
 }
@@ -176,32 +146,19 @@ tbody tr.dragging {
   transform: scale(1.1);
 }
 
-tbody tr:hover{
-  color: var(--bg-hover);
-}
-
 /* Trend */
 .trend {
   font-size: 12px;
 }
 
 .trend-up {
-  color: #ffa600;
+  color: var(--orange);
 }
 
 .trend-down {
-  color: #ff6361;
+  color: var(--red);
 }
 
-/* Links */
-a {
-  color: var(--purple);
-  text-decoration: none;
-}
-a:hover {
-  color: #bc5090;
-  text-decoration: underline;
-}
 
 /* Icon */
 .icon {

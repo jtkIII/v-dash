@@ -31,7 +31,7 @@
 
 #### Installation
 
-Make sure Node.js (LTS) is installed.
+Make sure Node.js is installed.
 
 Check:
 ```bash

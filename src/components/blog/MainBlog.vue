@@ -22,7 +22,7 @@
         <div class="post-info">
           <div class="post-meta">
             <div class="post-header">
-              <h4 class="name">
+              <h4 class="name click-me">
                 <button class="post-title" @click="selectPost(post.id)">
                   {{ post.name }}
                 </button>
@@ -140,10 +140,6 @@ button.post-title:hover {
 
 .author {
   font-size: var(--txt-md);
-}
-
-.name {
-  cursor: pointer;
 }
 
 ul.tags {
