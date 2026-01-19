@@ -1,5 +1,5 @@
 <template>
-  <div class="cards-grid">
+  <div class="cards-grid home-page">
     <div class="card">
       <CardHeader title="Team Members" subtitle="Overview of the team and their roles." />
       <ListUsers />
@@ -39,10 +39,7 @@ function handleSelect({ group, item }) {
 </script>
 
 <style>
-.cards-grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+.home-page{
+  margin-top: var(--space-lg);
 }
 </style>

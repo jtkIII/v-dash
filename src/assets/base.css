@@ -51,7 +51,6 @@ header h1 a {
   display: flex;
   flex-direction: column;
   min-height: var(--full-height);
-  padding: 0 var(--space-md)
 }
 
 #main {
@@ -206,11 +205,10 @@ thead th {
   background: var(--bg-light);
 }
 
-.grid-cards {
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .card {
