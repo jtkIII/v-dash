@@ -7,13 +7,17 @@
 
 ---
 
-### Features
+### Tech
 
 - ✅ Node.js + npm
 - ✅ Vue 3 via Vite
 - ✅ Vue Router
 - ✅ Minimal Dependencies
 - ✅ Simple state (using reactive store — lighter than Pinia/Vuex)
+
+---
+
+### Features
 
 - custom modal system
 - composable-based
