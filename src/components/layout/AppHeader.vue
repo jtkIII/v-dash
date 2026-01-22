@@ -1,7 +1,7 @@
 <template>
   <header>
     <section id="heading">
-      <h1><a href="/#">v-dash</a></h1>
+      <h1><a href="https://jtkiii.github.io/v-dash/#/">v-dash</a></h1>
       <nav>
         <ul class="nav-links">
           <li v-for="link in links" :title="link.alt" :key="link.path">
